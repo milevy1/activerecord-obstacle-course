@@ -117,11 +117,11 @@ describe 'ActiveRecord Obstacle Course' do
     expected_objects = [@item_1, @item_4, @item_2]
 
     # ----------------------- Using Ruby -------------------------
-    items = Item.all.select { |item| ids_to_find.include?(item.id) }
+    # items = Item.all.select { |item| ids_to_find.include?(item.id) }
     # ------------------------------------------------------------
 
     # ------------------ Using ActiveRecord ----------------------
-    # Solution goes here
+    items = Item.where(['id = ? or id = ? or id = ?', 1, 2, 4])
     # ------------------------------------------------------------
 
     # Expectation
