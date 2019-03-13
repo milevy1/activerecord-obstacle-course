@@ -103,8 +103,10 @@ describe 'ActiveRecord Obstacle Course' do
     # ------------------------------------------------------------
 
     # ------------------ Using ActiveRecord ----------------------
-    orders_of_500_and_700 = Order.where(["amount = ? or amount = ?", 500, 700])
-    orders_of_700_and_1000 = Order.where(["amount = ? or amount = ?", 700, 1000])
+    # orders_of_500_and_700 = Order.where(["amount = ? or amount = ?", 500, 700])
+    # orders_of_700_and_1000 = Order.where(["amount = ? or amount = ?", 700, 1000])
+    orders_of_500_and_700 = Order.where(amount: [500, 700])
+    orders_of_700_and_1000 = Order.where(amount: [700, 1000])
     # ------------------------------------------------------------
 
     # Expectation
