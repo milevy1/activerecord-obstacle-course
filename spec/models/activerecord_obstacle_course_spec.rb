@@ -121,7 +121,7 @@ describe 'ActiveRecord Obstacle Course' do
     # ------------------------------------------------------------
 
     # ------------------ Using ActiveRecord ----------------------
-    items = Item.where(['id = ? or id = ? or id = ?', 1, 2, 4])
+    items = Item.where(id: ids_to_find)
     # ------------------------------------------------------------
 
     # Expectation
