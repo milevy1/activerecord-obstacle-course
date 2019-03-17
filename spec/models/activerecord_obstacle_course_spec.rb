@@ -283,11 +283,11 @@ describe 'ActiveRecord Obstacle Course' do
     expected_result = ['Apples', 'Bananas', 'Carrots', 'Dumplings', 'Eggplant', 'Figs', 'Grapes', 'Honey', 'Ice Cream', 'Jalapeno']
 
     # ----------------------- Using Ruby -------------------------
-    names = Item.all.map(&:name)
+    # names = Item.all.map(&:name)
     # ------------------------------------------------------------
 
     # ------------------ Using ActiveRecord ----------------------
-    # Solution goes here
+    names = Item.pluck(:name)
     # ------------------------------------------------------------
 
     # Expectation
