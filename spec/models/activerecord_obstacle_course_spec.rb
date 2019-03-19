@@ -361,7 +361,11 @@ describe 'ActiveRecord Obstacle Course' do
     # ------------------------------------------------------------
 
     # ------------------ Using ActiveRecord ----------------------
-    # Solution goes here
+    users = User.joins(:orders, :order_items)
+                .where(order_items: {item_id: @item_8})
+                .distinct
+                .order(:name)
+                .pluck(:name)
     # ------------------------------------------------------------
 
     # Expectation
