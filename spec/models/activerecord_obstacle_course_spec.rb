@@ -359,10 +359,10 @@ describe 'ActiveRecord Obstacle Course' do
       ORDER BY users.name")
     users = users.map {|u| u['name']}
     # ------------------------------------------------------------
-
     # ------------------ Using ActiveRecord ----------------------
-    users = User.joins(:orders, :order_items)
-                .where(order_items: {item_id: @item_8})
+    users = User.joins(:orders)
+                .joins(:items)
+                .where("items.id": @item_8)
                 .distinct
                 .order(:name)
                 .pluck(:name)
