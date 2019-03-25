@@ -435,7 +435,7 @@ describe 'ActiveRecord Obstacle Course' do
     # -----------------------------------------------------------
 
     # ------------------ Using ActiveRecord ----------------------
-    # Solution goes here
+    average = Order.where(user_id: @user_3).average(:amount)
     # ------------------------------------------------------------
 
     # Expectation
