@@ -533,7 +533,7 @@ describe 'ActiveRecord Obstacle Course' do
     # ------------------------------------------------------------
 
     # ------------------ ActiveRecord Solution ----------------------
-    # Solution goes here
+    ordered_items = Item.joins(:orders).distinct.order(:id)
     # ---------------------------------------------------------------
 
     # Expectations
