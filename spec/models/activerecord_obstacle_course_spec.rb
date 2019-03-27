@@ -494,7 +494,7 @@ describe 'ActiveRecord Obstacle Course' do
     # -----------------------------------------------------------
 
     # ------------------ Improved Solution ----------------------
-    #  Solution goes here
+    orders = Order.joins(:items).where("items.id": @item_4)
     # -----------------------------------------------------------
 
     # Expectation
@@ -511,7 +511,7 @@ describe 'ActiveRecord Obstacle Course' do
     # -----------------------------------------------------------
 
     # ------------------ Improved Solution ----------------------
-    #  Solution goes here
+    orders = Order.joins(:items).where(user: @user_2, "items.id": @item_4)
     # -----------------------------------------------------------
 
     # Expectation
