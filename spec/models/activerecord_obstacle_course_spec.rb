@@ -531,7 +531,6 @@ describe 'ActiveRecord Obstacle Course' do
 
     ordered_items = ordered_items.compact
     # ------------------------------------------------------------
-
     # ------------------ ActiveRecord Solution ----------------------
     ordered_items = Item.joins(:orders).distinct.order(:id)
     # ---------------------------------------------------------------
@@ -555,7 +554,7 @@ describe 'ActiveRecord Obstacle Course' do
 
 
 
-  xit '26. returns the names of items that are associated with one or more orders' do
+  it '26. returns the names of items that are associated with one or more orders' do
     unordered_item_1 = create(:item, name: 'Unordered Item_1')
     unordered_item_2 = create(:item, name: 'Unordered Item_2')
     unordered_item_3 = create(:item, name: 'Unordered Item_3')
@@ -578,6 +577,7 @@ describe 'ActiveRecord Obstacle Course' do
     # Solution goes here
     # When you find a solution, experiment with adjusting your method chaining
     # Which ones are you able to switch around without relying on Ruby's Enumerable methods?
+    ordered_items_names = Item.joins(:orders).distinct.order(:name).pluck(:name)
     # ---------------------------------------------------------------
 
     # Expectations
