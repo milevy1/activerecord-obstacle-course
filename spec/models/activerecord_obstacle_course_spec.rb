@@ -381,7 +381,8 @@ describe 'ActiveRecord Obstacle Course' do
     # ------------------------------------------------------------
 
     # ------------------ Using ActiveRecord ----------------------
-    names = Item.joins(:orders).where("orders.id": Order.last).pluck(:name)
+    # names = Item.joins(:orders).where("orders.id": Order.last).pluck(:name)
+    names = Order.last.items.pluck(:name)
     # ------------------------------------------------------------
 
     # Expectation
